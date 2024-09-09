@@ -1,0 +1,77 @@
+:root {
+    --navy: #25316D;
+    --sky: #97D2EC;
+    --evening: #5F6F94;
+    --sand: #FEF5AC;
+}
+
+body {
+    background-color: var(--sky);
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: 3% auto;
+    padding: 10px;
+}
+
+main section {
+    min-height: 400px;
+    border: 1px solid grey;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+    box-shadow: 1px 4px 4px 0 #999999;
+}
+
+main section.product-form {
+    background-color: var(--navy);
+    color: var(--sand);
+}
+
+form label, input {
+    display: block;
+    border-radius: 7px;
+    margin-bottom: 3%;
+    width: 90%;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 7px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button {
+    border-radius: 7px;
+    padding: 5px 10px;
+    min-width: 100px;
+    margin-top: 3%;
+    font-size: 17px;
+    background-color: var(--sky);
+}
+
+main section.product-list {
+    background-color: var(--evening);
+}
+
+main section.product-list button {
+    background-color: var(--navy);
+    color: var(--sand);
+}
+
+main section.product-list input {
+    width: 50%;
+    display: inline-block;
+    margin-left: 5%;
+}
+
+main section.product-list div {
+    background-color: whitesmoke;
+    padding: 10px;
+    min-height: 70%;
+}
+
+main section.product-list li {
+    font-size: 17px;
+}

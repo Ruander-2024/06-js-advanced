@@ -1,0 +1,28 @@
+--- FELADAT: ---
+
+Egészítsd ki a xml-vs-fetch webshop oldalának müködését a FETCH api segítségével.
+Lényeg, ha kitöltik az űrlapot és rákattintanak a "Save" gombra, akkor az űrlapnak el kell küldenie
+a beviteli mezők adatait (JSON objektumként) a dummyjson.com szerverére.
+
+Ha sikeres a küldés akkor egy "alert" üzenetben jelenjen meg, hogy milyen néven lett elmentve az új termék
+(lásd mellékelt webshop-save.png);
+Fontos hogy akkor jelenjen meg az üzenet, amikor megérkezett a sikeres szerver válasz.
+Ha sikertelen lenne a mentés (pl: téves url), akkor jelenjen meg "alert"-ként a "Saving was not successful!" üzenet
+
+Pár sorvezető:
+
+- Kell egy metódus, ami "EventListener-t" ad a mentés gombhoz.
+- Kell egy "saveNewProduct" metódus, ami kiolvassa az input mező értékeit, és legyárt egy objektumot belőlük
+
+- Az objektum tulajdonságainak neve azzal kell megegyeznie, amit a szerver "vár" https://dummyjson.com/docs/posts (Get a single product, lásd "Show output").
+Hint: Bármilyen néven lehetne küldeni a "dummyjson" szervernek az adatokat,
+de a való életben úgy kell, amilyen néven a szerver tárolja (küldené vissza...)
+Az input mezők "id" nevei csak egy helyen térnek el attól, ahogy a szerver tárolja ;-)
+Ezt a "saveNewProduct" metódust kell meghívnia az "EventListener"-nek
+
+- Olvasd át a dummyjson szerver doksiját ott, ahol új "Product"-ot lehet elmenteni: https://dummyjson.com/docs/posts (Add a product rész)
+- Készíts egy "sendNewProduct" metódus, mely kap egy "product" objektumot paraméterként, és
+ fetch apival segítségével elküldi a szervernek. (lásd doksi). Kösd össze megfelelően a "saveNewProduct"
+
+- Ha sikeresen lefutott a "Promise", a fetch, akkor jelenjen meg az "alert" üzenet az elvárt módon.
+ Ha sikeres üzenet megjelent, "resetelje" a form a beviteli mezőit..

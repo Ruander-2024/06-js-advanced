@@ -1,0 +1,37 @@
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+- event loop
+- callback hell (elkerülése) 2014-5-6
+- promise
+- async - await
+- (fetch API)
+- (kivételkezelés) 
+
+- Promise: 
+    - speciális objektum
+    - aszinkron művelet állapotát hordozza (és az értéket, amit tárol)
+    - minden promise-nak van egy executor függvénye, és annak 1 v 2 paramétere (resolve, reject)
+    - promise-on belüli művelet sikeres: resolve
+    - promise-on belüli művelet sikertelen: reject
+    - kettő együtt soha sem fut le
+    - ha sikeresen lefutott fulfilled állapotba kerül
+    - állapotai: 
+        - pending
+        - fulfilled / rejected
+        - settled
+    - promise meghívás: .then()
+    - then visszatérési értéke: még 1 promise
+
+- Promise then chain
+- Promise chain
+
+
+- fetch API
+    - options
+    - headers
+
+- async - await
+    - érdemes kivételkezelést alkalmazni
+    - minden async függvény visszatérési értéke egy promise
+    - await-el a promise-t visszaadó függvényeket, metódusokat tudjuk "megvárni"
+- kivételkezelés

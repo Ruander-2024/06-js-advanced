@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <h1>Borravaló kalkulátor</h1>
+        <form>
+            <label>Mennyi volt a számla?</label><br>
+            <input id="bill-amount" type="number">
+        </form>
+        <form>
+            <label>Hányan osztoztok a számlán?</label><br>
+            <input id="share-bill" type="number">
+        </form>
+        <form>
+            <label>Milyen volt a kiszolgálás?</label><br>
+            <select id="service-quality">
+                <option disabled selected value="0">Válassz...</option>
+                <option value="0.3">30% - Kiemelkedő</option>
+                <option value="0.2">20% - Jó</option>
+                <option value="0.15">15% - Rendben volt</option>
+                <option value="0.1">10% - Rossz</option>
+                <option value="0.05">5% - Borzalmas</option>
+            </select>
+        </form>
+        <div>
+            <h2 id="total">0.00 HUF</h2>
+            <button onclick="calculate()">SZÁMOLJ</button>
+        </div>
+    </div>
+
+
+    <script src="practice.js"></script>
+
+</body>
+
+</html>
