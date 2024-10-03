@@ -1,3 +1,5 @@
+//const { compileString } = require("sass");
+
 // SELECTION
 const headerTitle = document.getElementById('header-title'); // ID alapján kiválasztott header-title
 console.log(headerTitle);
@@ -33,8 +35,13 @@ buttonClassElements.namedItem('rome-btn').style.backgroundColor = 'blue';  // A 
 
 buttonClassElementsWithQuery[0].id = 'bp-btn';
 
-console.log(firstParInDesc.innerHTML);
 
+console.log('--- innerHTML ---');
+console.log(firstParInDesc.innerHTML);
+console.log('--- innerText ---');
+console.log(firstParInDesc.innerText);
+console.log('--- textContent ---');
+console.log(firstParInDesc.textContent);
 
 
 for(let i = 0; i < buttonClassElements.length; i++){
@@ -45,5 +52,60 @@ for(let i = 0; i < buttonClassElements.length; i++){
 
 // EVENTS
 
+// function clickMeFunc() { // Kattints rám funkció
+//     alert('Hello from Budapest, you clicked me!');
+// }
+
+// buttonClassElements[1].onclick = function (){
+//     alert('Hello from Rome, you clicked me!');
+// };
+
+// buttonClassElements[2].addEventListener('click', () =>{
+//     alert('Hello from Paris, you clicked me!');
+// });
+
+for (const button of buttonClassElements){
+    button.addEventListener('click', (event) =>{
+        // console.log(event);
+        alert(`Hello from ${event.target.innerText}, you clicked me!`);
+    });
+}
+
 
 // ELEMENT MODIFICATION
+
+//Létrehozás
+
+
+
+
+
+let londonBtn = document.createElement('button');  // Egy tag létrehozása     
+londonBtn.innerText = 'London';
+londonBtn.className = 'button';  // Pontosan kell megadni a class nevet, nem térhet el semennyire
+
+// Megfelelő helyre beillesztés
+
+document.querySelector('.buttons').appendChild(londonBtn);
+
+
+for (const button of buttonClassElements){
+    button.addEventListener('click', (event) =>{
+        // console.log(event);
+        alert(`Hello from ${event.target.innerText}, you clicked me!`);
+    });
+}
+
+
+
+console.log('-- htmlCollection --');
+console.log(buttonClassElements);
+console.log('-- nodeList --');
+console.log(buttonClassElementsWithQuery);
+
+console.log('-- childNodes --');
+console.log(document.querySelector('.buttons').children);
+console.log(document.querySelector('.buttons').childNodes);
+
+
+
