@@ -24,3 +24,5 @@ function set_background() {
     //Állítsd be a második elem színét kékre
 
     secondParagraph.style.color = '#381DEC';
+
+}
