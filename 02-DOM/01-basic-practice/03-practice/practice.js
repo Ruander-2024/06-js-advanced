@@ -16,9 +16,11 @@ function set_background() {
     //Beállítom az első paragraph elem háttérszínét pirosra
     firstParagraph.style.background = "red";
     
-    //FELADAT
+//FELADAT
     //A fenti minta alapján kérd el a myPargraphs tömb második elemét
 
+    let secondParagraph = myPargraphs[1];
+
     //Állítsd be a második elem színét kékre
-    
-}
+
+    secondParagraph.style.color = '#381DEC';
