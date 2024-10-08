@@ -18,6 +18,21 @@
 //Hint: document.getElementById("writeName").innerHTML
 
 
+function getName() {
+    // 4. lépés
+    let name = document.getElementById("name").value;
+    
+    // 5. 
+    console.log('A felhasználó neve: ' + name);
+
+    // 6. 
+    sayHello(name);
+}
+
+function sayHello(name) {
+    // 8. 
+    document.getElementById("writeName").innerHTML = 'Hello ' + name + '!'; // Köszöntés
+}
 
 
 
