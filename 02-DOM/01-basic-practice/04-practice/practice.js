@@ -11,18 +11,30 @@ function getAttributes() {
     // Bónusz feladat, fűzz össze vesszővel elválasztva az étékeket és írd ki
     // egy új <p> -be a gomb alá
 
-
+    const hreflang = document.getElementById("practice").hreflang
+    console.log('a hreflang attribútum értéke' + hreflang);
+    
     //2. Feladat
     //A példa mintájára kérd el a target értékét és írasd ki
+
+    const target = document.getElementById('practice').target;
+    console.log('A tpe attribútum értéke' + target);
+    
 
 
     //3. Feladat
     //A példa mintájára kérd el a type értékét és írasd ki
 
+    const type = document.getElementById('practice').type;
+    console.log('A tpe attribútum értéke' + type);
+
 
     // Bónusz feladat helyezz el egy bekezést "result" id-val és a beltartalmában
     // jelenítsd meg vesszővel elválasztva az értékeket
 
+    const resultParagraph = document.getElementById("result");
+    const combinedValues = `${href},${hreflang},${target},${type}` // Vesszővel elválasztott értékek
+    resultParagraph.textContent = combinedValues; // Beállítjuk a bekezdés tartalmát
+}
 
     // Output a bekezdésben: https://www.veszpzoo.hu/,en-us,_self,text/html 
-}

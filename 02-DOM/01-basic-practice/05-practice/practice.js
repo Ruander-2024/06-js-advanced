@@ -17,7 +17,16 @@
 //jelenő szöveget az innerHTML propertynek fogunk értéket adni: 'Hello ' + name;
 //Hint: document.getElementById("writeName").innerHTML
 
+function getName() {
+    let name = document.getElementById('name').value;
+    console.log('A felhasználó neve: ' + name);
+    sayHello(name);
+    
+}
 
+function sayHello(name){
+    document.getElementById('writeName').innerHTML = 'Hello ' + name + '!';
+}
 
 
 
