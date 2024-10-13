@@ -13,9 +13,22 @@ function addNumbers() {
 }
 
 //Írj egy függvényt, ami az első számot kivonja a másodikból
-
+function subtractedNumbers() {
+    const firstExtract = document.getElementById("firstExtract").value;
+    const secondExtract = document.getElementById("secondExtract").value;
+    document.getElementById("extract-result").innerHTML = +firstExtract - +secondExtract;
+}
 
 //Írj egy függvényt, ami megszorozza a két számot egymással
-
+function multiplyNumbers() {
+    const firstMultiply = document.getElementById("firstMultiply").value;
+    const secondMultiply = document.getElementById("secondMultiply").value;
+    document.getElementById("multiply-result").innerHTML = +firstMultiply * +secondMultiply;
+}
 
 //Írj egy függvényt, ami elosztja a második számot az elsővel
+function divideNumbers() {
+    const firstDivide = document.getElementById("firstDivide").value;
+    const secondDivide = document.getElementById("secondDivide").value;
+    document.getElementById("divide-result").innerHTML = +firstDivide / +secondDivide;
+}
