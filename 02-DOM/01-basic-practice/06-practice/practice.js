@@ -6,6 +6,8 @@
 //kell a változók elég tenni, így számként fogja érzékelni és összeadja.
 //A többi műveletnél erre nem lesz szükség.
 
+
+// Összeadás függvény:
 function addNumbers() {
     const firstAdd = document.getElementById("firstAdd").value;
     const secondAdd = document.getElementById("secondAdd").value;
@@ -14,16 +16,16 @@ function addNumbers() {
 
 //Írj egy függvényt, ami az első számot kivonja a másodikból
 
-// Kivonás függvény
+// Kivonás függvény:
 function subtractNumbers() {
-    const firstExtract = document.getElementById("firstExtract").value;
+    const firstExtract = document.getElementById("firstExtract").value;                     
     const secondExtract = document.getElementById("secondExtract").value;
-    document.getElementById("extract-result").innerHTML = secondExtract - firstExtract;
+    document.getElementById("extract-result").innerHTML = firstExtract - secondExtract;
 }
 
 //Írj egy függvényt, ami megszorozza a két számot egymással
 
-// Szorzás függvény
+// Szorzás függvény:
 function multiplyNumbers() {
     const firstMultiply = document.getElementById("firstMultiply").value;
     const secondMultiply = document.getElementById("secondMultiply").value;
@@ -32,13 +34,13 @@ function multiplyNumbers() {
 
 //Írj egy függvényt, ami elosztja a második számot az elsővel
 
-// Osztás függvény
+// Osztás függvény:
 function divideNumbers() {
-    const firstDivide = document.getElementById("firstDivide").value;
+    const firstDivide = document.getElementById("firstDivide").value;                           
     const secondDivide = document.getElementById("secondDivide").value;
     if (firstDivide == 0) {
         document.getElementById("divide-result").innerHTML = "Cannot divide by zero";
     } else {
-        document.getElementById("divide-result").innerHTML = secondDivide / firstDivide;
+        document.getElementById("divide-result").innerHTML = firstDivide / secondDivide;
     }
 }
