@@ -28,3 +28,63 @@ const updatedProducts = products.map(product => {
 });
 
 console.log(updatedProducts);
+
+
+// ARROW FUNCTION: 
+
+// function add(a, b){
+//     return a + b;
+// }
+
+// // ugyanez rövidítve ARROW -al : 
+
+// const add = (a, b) => a + b; 
+
+// const great = () => console.log('Hello!');
+
+// const double = n => n * 2;
+
+// const doubled = numbers2.map(n => n * 2);
+
+// const button = document.querySelector('button');
+
+// button.addEventListener('click', () => {
+//     console.log('Button clicked!');
+// });
+
+
+
+// érdekességképpen : 
+
+// const person = {name: 'John',           
+//     sayName: () =>{                 // nem működik a this kontextus végett                    
+//     console.log(this.name);
+// }};
+
+const person = {name: 'John', 
+    sayName: function(){            // helyette ez a jó megoldás                  
+    console.log(this.name);
+}};
+
+
+
+// REDUCE : 
+
+const numbers3 = [1, 2, 3, 4, 5];
+
+const sum = numbers3.reduce((acc, cur) =>{      // accumulator  , currentValue    (előző és mostani)
+    return acc + cur;
+}, 0);
+
+console.log(sum);
+
+const total = products.reduce((acc, cur) => acc + cur.price, 0);
+
+console.log(total);
+
+
+
+
+
+
+
