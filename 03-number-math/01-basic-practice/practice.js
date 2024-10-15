@@ -16,7 +16,7 @@ console.log(convertTextToNumber('szia'));
 //hányadik tizedesig szerené látni a számot.
 
 function fixFloat(number, precision) {
-
+    return number.toFixed(precision)
 };
 
 console.log(fixFloat(123.3918741264127624198,2));
@@ -27,8 +27,15 @@ console.log(fixFloat(123.42487982320234487987874,5));
 //////////////////////////////////////////////// HARMADIK FELADAT ////////////////////////////////////////////////
 
 //Írd meg a függvényt úgy, hogy a paraméterben kapott tömb elemeit átalakítsa 2 tizedesjegyig.
-function getNumber() {
-    
+function getNumber(number) {
+    return number.map((num) => num.toFixed(2));
 };
+
+console.log(
+    getNumber([
+      123.3918741264127624198, 123.54798545656, 3.76767,
+      123.42487982320234487987874,
+    ])
+  );
 
 
