@@ -18,39 +18,44 @@ const employees = [
 
 /**
  * @TODO make a list of all the employees whose name starts with 'H'
- */
-
-// console.table();
+ */ const employeeWithH = employees.filter(employee => employee.name[0] === 'H'); 
+ console.table(employeeWithH);
 
 /**
  * @TODO make a list of all the employees older than 30
  */
-
-// console.table();
+    const employee30 = employees.filter(employee => employee.age > 30);
+ console.table(employee30);
 
 /**
  * @TODO make a list of all the employees with salary greater than 30000, sorted by their salary (ascending)
  */
-
-// console.table();
+    const employeeSalary = employees.filter(employee => employee.salary > 30000).sort((a , b) => a.salary - b.salary);
+ console.table(employeeSalary);
 
 /**
  * @TODO make a list of all the employess with salary between 25000 and 65000 (inclusive on both ends)
  */
-
-//console.table();
+const employeeSalary2 = employees.filter(employee => employee.salary >= 25000 &&  employee.salary <= 65000 );
+console.table(employeeSalary2);
 
 /**
  * @TODO make a list of all the bartenders' name
  */
-
-//console.table();
+ const employeeBart = employees.filter(employee => employee.position === 'bartender').map(bartender => bartender.name);
+console.table(employeeBart);
 
 /**
  * @TODO calculate the average salary of the employees (use "reduce" method)
  */
+    const avgSalary = employees.reduce((avgSalary, employee) => {
+        let salary = employee.salary;
+        avgSalary += salary;
+        return avgSalary;
+    }, 0) / employees.length
 
-//console.log();
+
+console.log(avgSalary);
 
 /**
 * @TODO sum the number of letters of all the first names that are longer than 5 characters
