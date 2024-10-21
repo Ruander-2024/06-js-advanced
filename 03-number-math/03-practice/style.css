@@ -1,0 +1,22 @@
+
+body{
+    padding: 1rem;
+    display: flex;
+    align-items: center;    
+    background-image: url(restaurant.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1{
+    
+    font-size: 4rem;
+    font-style: italic;
+    background-color: beige;
+}
+
+form{
+    font-size: 3rem;    
+    
+    
+}
