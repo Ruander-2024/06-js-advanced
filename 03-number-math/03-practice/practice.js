@@ -7,5 +7,30 @@
 //összeget.
 
 function calculate() {
+    // Számla összegének lekérdezése
+    const billAmount = Number(document.getElementById("bill-amount").value);
+    
+    // Számlán osztozó személyek számának lekérdezése
+    const numberOfPeople = Number(document.getElementById("share-bill").value);
+    
+    // Szolgáltatás minőségének lekérdezése
+    const serviceQuality = Number(document.getElementById("service-quality").value);
 
+    // Ellenőrzés, hogy az értékek megfelelően vannak-e megadva
+    if (isNaN(billAmount) || isNaN(numberOfPeople) || numberOfPeople <= 0 || serviceQuality === 0) {
+        alert("Kérlek, adj meg minden értéket megfelelően!");
+        return;
+    }
+
+    // Borravaló kiszámítása
+    const tipAmount = billAmount * serviceQuality;
+
+    // Teljes összeg kiszámítása (számla + borravaló)
+    const totalAmount = billAmount + tipAmount;
+
+    // Fejenkénti összeg kiszámítása
+    const amountPerPerson = totalAmount / numberOfPeople;
+
+    // Az eredmény megjelenítése
+    document.getElementById("total").innerText = amountPerPerson.toFixed(2) + " HUF";
 }
