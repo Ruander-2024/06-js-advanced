@@ -1,6 +1,6 @@
 
 body{
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     align-items: center;    
     background-image: url(restaurant.jpg);
@@ -10,13 +10,15 @@ body{
 
 h1{
     
-    font-size: 4rem;
+    font-size: 3rem;
     font-style: italic;
     background-color: beige;
 }
 
 form{
-    font-size: 3rem;    
+    font-size: 2rem;    
+    background-color: beige;
+   
     
     
 }
