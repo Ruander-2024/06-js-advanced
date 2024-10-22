@@ -51,4 +51,96 @@ const calculate = function (array, operation) {
 }
 
 console.log(calculate(listOfNumbers2, double));
-console.log(calculate(listOfNumbers, triple));
+console.log(calculate(listOfNumbers, triple));    
+
+// MAP
+
+console.log('---map---');
+
+const people = [
+    { name: 'Joe', age: 30, gender: 'male' },
+    { name: 'Gustav', age: 43, gender: 'male' },
+    { name: 'Jane', age: 18, gender: 'female' },
+    { name: 'Billy', age: 42, gender: 'male' },
+    { name: 'Eva', age: 6, gender: 'female' },
+    { name: 'Victoria', age: 53, gender: 'female' },
+  ];
+  
+  const words = ['asap', 'byob', 'rsvp', 'diy'];
+
+  const olderPeople = people.map(person => {    //Idősebb emberek
+    return{
+        name: person.name,
+        age : person.age + 10,
+        gender : person.gender,
+        isOlderThan50: person.age + 10 > 50
+    };
+  }) ;
+  console.log(people);
+  console.log(olderPeople);
+
+  const peopleAgesList = olderPeople.map(person => person.age);
+
+  console.log(peopleAgesList);
+
+  const wordsCapitalize = words.map(word =>{
+    return word.toUpperCase().split('').join('.');
+  })
+
+  console.log(wordsCapitalize);
+
+  // FOREACH
+
+  console.log('---foreach---');
+
+//   const politePeople = people.forEach(person => (person.name = 'Hi I am ' + person.name));      // forEach ciklusnál nem hozunk létre változót
+
+//   console.log(politePeople); // undefined
+  console.log(people);
+
+  people.forEach(person => (person.name = 'Hi I am ' + person.name));
+  console.log(people);
+
+  listOfNumbers.forEach((num, index) => console.log(index, num));
+
+  // FILTER
+
+  console.log('---filter---');
+
+  const peopleOver40 = olderPeople.filter(person => person.age > 40);
+
+  console.log(peopleOver40);
+
+  const nameOfPeopleOver40 = olderPeople
+  .filter(person => person.age > 40)
+  .map(person => person.name);
+
+  console.log(nameOfPeopleOver40);
+
+  // SORT
+
+  console.log('---sort---');
+
+//   const listOfNumbers = [23, 2, 3, 45, 67];
+
+  const namesList = ['Eva', 'Bob', 'Vicky', 'Karl'];
+
+  listOfNumbers.sort();
+  console.log(listOfNumbers);
+  namesList.sort();
+  console.log(namesList);
+
+  listOfNumbers.sort((a, b) => a - b);
+  console.log(listOfNumbers);
+  listOfNumbers.sort((a, b) => b - a);
+  console.log(listOfNumbers);
+
+  olderPeople.sort((a) => a.gender === 'female' ? 1 : -1);
+  console.log(olderPeople);
+
+  console.log('localeCompare');
+  olderPeople.sort((a, b) => b.gender.localeCompare(a.gender));
+  console.log(olderPeople);
+
+
+
