@@ -22,30 +22,38 @@ function getMin(array) {
     //Keresd meg add vissza a legkisebb értéket
     //Ahhoz, hogy a paraméterben kapott tömböt használni tudd a min függvényben, 
     //tedd elé: ...
+    return Math.min(...array);
 };
 
 function getRound(number) {
     //Add vissza a paraméterben kapott szám kerekített értékét
+    return Math.round(number);
 }
 
 function getMax(array) {
     //Keresd meg és add vissza a legnagyobb értéket.
     //Ahhoz, hogy a paraméterben kapott tömböt használni tudd a min függvényben, 
     //tedd elé: ...
+    return Math.max(...array);
 };
 
 function getPow(first, second) {
     //Add vissza a hatványozott értéket (pow() függvény segítségével)
+    return Math.pow(first, second);
 };
 
 function getFloor(numberFloor) {
     //Add vissza a paraméterben kapott tört számhoz (alsó) legközelebb eső egész szám értékét (floor())
+    return Math.floor(numberFloor);
 };
 
 function getCeil(number) {
     //Add vissza a paraméterben kapott tört számhoz (felső) legközelebb eső egész szám értékét (ceil())
+    return Math.ceil(number);
 };
 
 function getPI() {
     //Add vissza a PI értékét
+
+    return Math.PI;
 }

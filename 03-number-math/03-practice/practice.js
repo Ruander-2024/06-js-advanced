@@ -7,5 +7,32 @@
 //összeget.
 
 function calculate() {
+// Beolvassuk a számla összegét, hányan osztoznak, és a kiszolgálás minőségét
+const billAmount = parseFloat(document.getElementById('bill-amount').value);
+const shareBill = parseInt(document.getElementById('share-bill').value);
+const serviceQuality = parseFloat(document.getElementById('service-quality').value);
 
+// Ellenőrizzük, hogy minden adat helyesen van-e megadva
+if (isNaN(billAmount) || billAmount <= 0) {
+    alert("Adj meg egy érvényes számlaösszeget!");
+    return;
+}
+
+if (isNaN(shareBill) || shareBill <= 0) {
+    alert("Adj meg egy érvényes számot arra, hogy hányan osztoztok!");
+    return;
+}
+
+if (serviceQuality === 0) {
+    alert("Kérlek válaszd ki, hogy milyen volt a kiszolgálás!");
+    return;
+}
+
+// tip
+const tipAmount = billAmount * serviceQuality;
+const totalAmount = billAmount + tipAmount;
+const amountPerPerson = totalAmount / shareBill;
+
+// Az eredmény 
+document.getElementById('total').innerText = amountPerPerson.toFixed(2) + " HUF fejenként";
 }
