@@ -114,3 +114,12 @@ olderPeople.sort((a, b) => a.gender.localeCompare(b.gender));
 
 
 console.log(olderPeople);
+
+
+// SOME, Every
+
+console.log('----SOME, Every------');
+
+
+console.log(people.some(person=> person.age < 18));  //igaz valamelyikre    
+console.log(people.every(person=> person.age < 18)); // mindre igaz
