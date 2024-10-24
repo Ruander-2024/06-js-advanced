@@ -21,3 +21,13 @@
 
 
 
+
+function getName(){
+    let name = document.getElementById('name').value;
+    console.log('A felhasználó neve:' + name);
+}
+
+
+function sayHello(name){
+    document.getElementById('writeName').innerHTML = 'Hello' + name;
+}

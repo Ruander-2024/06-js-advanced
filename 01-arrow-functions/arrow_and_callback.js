@@ -16,6 +16,10 @@ const employees = [
  * Ahol kell használj minél több beépített metódust.
  */
 
+const employeeWithH = employees.filter(employee => employee.name[0] === 'H');
+
+console.table(employeeWithH);
+
 /**
  * @TODO make a list of all the employees whose name starts with 'H'
  */
@@ -26,31 +30,48 @@ const employees = [
  * @TODO make a list of all the employees older than 30
  */
 
+const employeesOlder30 = employees.filter(employee => employee.age > 30);
+
+    console.table(employeesOlder30);
+
 // console.table();
 
 /**
  * @TODO make a list of all the employees with salary greater than 30000, sorted by their salary (ascending)
  */
 
-// console.table();
+
+const employeesGreaterSalary = employees.filter(employee => employee.salary > 30000).sort((a, b) => a.salary - b.salary);
+
+console.table(employeesGreaterSalary);
 
 /**
  * @TODO make a list of all the employess with salary between 25000 and 65000 (inclusive on both ends)
  */
 
-//console.table();
+const employeesFilteredSalary = employees.filter(employee => employee.salary >= 25000 && employee.salary <= 65000);
+
+console.table(employeesFilteredSalary);
 
 /**
  * @TODO make a list of all the bartenders' name
  */
 
-//console.table();
+const bartendersName = employees.filter(employee => employee.position === 'bartender').map(bartender => bartender.name);
+
+console.table(bartendersName);
 
 /**
  * @TODO calculate the average salary of the employees (use "reduce" method)
  */
 
-//console.log();
+const averageSalary = employees.reduce((averageSalary, employee) => {
+    let salary = employee.salary;
+    averageSalary += salary;
+    return averageSalary;
+}, 0) / employees.length;
+
+console.log(averageSalary);
 
 /**
 * @TODO sum the number of letters of all the first names that are longer than 5 characters
