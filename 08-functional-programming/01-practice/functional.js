@@ -23,19 +23,20 @@ console.log(' ----------------------- FOREACH -----------------------');
 //  ----------- 1. FELADAT ----------
 // Írd ki minden felhasználó keresztnevét (console.log-al minden elemet)
 
-
+users.forEach(user => console.log(user.firstName));
 
 // --------------2. FELADAT --------------
 // Ird ki minden felhasználó családnevét az alábbi szintaktikában:
 // pl: "Family name: Niro"
 
+users.forEach(user => console.log(`Family name: ${user.familyName}`));
 
 // -------------- 3. FELADAT -----------------------
 // Ird ki minden user fő adatait (moneyAccount nem kell) alábbi módon történő szintaktikában:
 // pl: "Name: Tom Niro,age: 30,activity: true"
 // Hint: Próbáld ki a JS String interpolation-t (String Literals) : https://dmitripavlutin.com/string-interpolation-in-javascript/
 
-
+users.forEach(user => console.log(`Name: ${user.firstName} ${user.familyName},age: ${user.age},activity: ${user.isActive}`));
 
 console.log(' -------------------- MAP ------------------------');
 
@@ -43,7 +44,9 @@ console.log(' -------------------- MAP ------------------------');
 // Gyűjtsd ki egy listába a First Name + Family neveket összevonva az alábbi példa szerint:
 // ["Tom Hanks", "Michale Jackson"...]
 
-console.log(users);
+const fullNames = users.map(user => `${user.firstName} ${user.familyName}`).join(', ')
+
+console.log(fullNames);
 
 //  ---------------- 5. FELADAT ------------------
 // Gyűjts ki egy listába a keresztneveket és aktivitásokat az alábbi módon:
@@ -54,7 +57,9 @@ console.log(users);
 //  ---------------- 6. FELADAT ------------------
 // Gyűjtsd ki egy külön listába csupa Nagy betűvel a Családneveket:
 
-console.log(users);
+const firstNameActivity = users.map(user => `${user.firstName} activity: ${user.isActive}`)
+
+console.log(firstNameActivity);
 
 // -------------- BÓNUSZ MAP FELADAT --------------:
 // Készíts objektumokat az egyes Kereszt és Családnevekből (property értékek legyenek), majd gyűjtsd ki egy listába
