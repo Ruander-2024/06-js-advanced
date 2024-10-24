@@ -148,3 +148,20 @@ const people = [
     console.log(olderPeople);
 
 
+    // SOME, EVERY 
+
+    console.log('---some, every---');
+
+    // const people = [
+    //     { name: 'Joe', age: 30, gender: 'male' },
+    //     { name: 'Gustav', age: 43, gender: 'male' },
+    //     { name: 'Jane', age: 18, gender: 'female' },
+    //     { name: 'Billy', age: 42, gender: 'male' },
+    //     { name: 'Eva', age: 6, gender: 'female' },
+    //     { name: 'Victoria', age: 53, gender: 'female' },
+    //   ];
+
+    console.log(people.some(person => person.age < 18));
+
+    console.log(people.every(person => person.age < 18));
+

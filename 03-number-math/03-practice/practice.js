@@ -24,13 +24,19 @@ function calculate() {
 
     // Borravaló kiszámítása
     const tipAmount = billAmount * serviceQuality;
-
-    // Teljes összeg kiszámítása (számla + borravaló)
-    const totalAmount = billAmount + tipAmount;
-
+   
     // Fejenkénti összeg kiszámítása
-    const amountPerPerson = totalAmount / numberOfPeople;
+    const amountPerPerson = tipAmount / numberOfPeople;
 
     // Az eredmény megjelenítése
     document.getElementById("total").innerText = amountPerPerson.toFixed(2) + " HUF";
+
 }
+
+
+//     const divisonResult = num1 / num2;
+
+// const finalResult = divisonResult * num3;
+
+// document.getElementById('total').innerText = finalResult.toFixed(2);
+// }
