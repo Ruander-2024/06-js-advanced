@@ -79,6 +79,16 @@ const groupedByRatings = books.reduce((groupedBooks, book) => {
 
 }, {})
 
+books.forEach(book => {
+    const rating = Math.floor(book.rating); // Round down the rating
+    if (!groupByRating3[rating]) {
+    groupByRating3[rating] = []; // If no group for this rating exists, create an empty array
+    }
+    groupByRating3[rating].push(book.title); // Add the book's title to the corresponding rating group
+    });
+    
+    console.log(groupByRating3);
+
 console.log(groupedByRatings);
 console.log(groupedByRatings2);
 
