@@ -59,33 +59,46 @@ console.log(firstNameActivity);
 //  ---------------- 6. FELADAT ------------------
 // Gyűjtsd ki egy külön listába csupa Nagy betűvel a Családneveket:
 
-// console.log(users);
+const upperCaseFamilyNames = users.map(name => name.familyName.toUpperCase());
+console.log('6. feladat');
+console.log(upperCaseFamilyNames);
+// console.log('User listánk:', users);
+console.log('6. feladat');
+const familyName1 = users.map(user => `${user.familyName.toUpperCase()}` ).join()
+console.log(familyName1);
 
 // -------------- BÓNUSZ MAP FELADAT --------------:
 // Készíts objektumokat az egyes Kereszt és Családnevekből (property értékek legyenek), majd gyűjtsd ki egy listába
 // porperty nevek: firstName, familyName
 // Eredmény példa: [{firstName: "Tom", familyName: "Gibson"}, {firstName:"Michael", familyName: "Jackson"}....]
 
-// console.log(users);
 
 console.log('---------------------- FILTER ---------------------');
 
 //  ---------------- 7. FELADAT ------------------
 // Készíts egy metódust, ami visszaadja a 18 éven aluli felhasználókat
+console.log('7. feladat');
+const underEighteen = users.filter(user => user.age < 18);
+console.log(underEighteen);
 
 // console.log(users);
 
 //  ---------------- 8. FELADAT ------------------
 // Készíts egy metódust, ami visszaadja azokat az aktiv felhasználókat, aki már betöltötték
 // a 18. élet évüket
-
-// console.log(users);
+console.log('8. feladat');
+let activeAdultUsers = users.filter(user => user.isActive && user.age >= 18);
+console.log(activeAdultUsers);
+console.log(users);
 
 //  ---------------- 9. FELADAT ------------------
 // Készíts egy olyan metódust ami visszaadja az első felhasználót és onnan kezdve minden 3-ik
 // felhasználót, ha azok éppen aktív állapotban vannak
 // Hint: a filternek meg lehet adni plusz paramétert, ami az elem indexét tárolhatja
-// Elvárt eredmény üres lista! (próbáld ki inaktiv-ra állítod a feltételt, ekkor 9 elemű listát várunk)
+// Elvárt eredmény üres lista! (próbáld ki feltételt hamisra állítod, ekkor 9 elemű listát várunk)
+console.log('9. feladat');
+const everyThirdAndActive = users.filter((user, index) => user.isActive === false && index % 3 === 0);
+console.log(everyThirdAndActive);
 
 // console.log(users);
 
@@ -96,24 +109,37 @@ console.log('------------------ REDUCE -----------------');
 // Késztíts a map() metódus segítségével egy listát, ami csak az életkorokat tárolja,
 // majd add össze az életkorokat a reduce() segítségével
 // Hint: próbáld meg úgy is, hogy összefűzöd a két metódust
+console.log('10. feladat');
 
-let allAges = 0;
-// console.log(allAges);
+let allAges = users
+    .map(user => user.age)
+    .reduce((osszes, kor) => osszes + kor);
+console.log(allAges);
+
+const ages = users.map(user => user.age);
+
+const totalAge = ages.reduce((sum, age) => sum + age, 0); // sum = eddigi érték / oda gyujti és hozzadja az age-t
+console.log(totalAge);
 
 //  ---------------- 11. FELADAT ------------------
 // Késztíts a map() metódus segítségével egy listát, ami csak a pénzszámla értékeit tárolja,
 // majd add össze az egyenlegeket a reduce() segítségével.
 // Hint: próbáld meg úgy is, hogy összefűzöd a két metódust
-
-let allMoneyAccount = 0;
-// console.log(allMoneyAccount);
+console.log('11. feladat');
+let allMoneyAccount = users
+    .map(user => user.moneyAccount)
+    .reduce((sum, money) => sum + money, 0);
+console.log(allMoneyAccount);
 
 //  ---------------- 12. HALADÓ BÓNUSZ FELADAT ------------------
 // Készíts a funkciónális programozás jegyében  olyan metódusokat összefűzve,
 // melyek visszaadják a 20 éves vagy az alatti felhasználók összes pénz számlájukat
-
-let youngCustomerAllAccount = 0;
-// console.log(youngCustomerAllAccount);
+console.log('12. feladat');
+let youngCustomerAllAccount = users
+    .filter(user => user.age <= 20)
+    .map(user => user.moneyAccount)
+    .reduce((sum, money) => sum + money);
+console.log(youngCustomerAllAccount);
 
 
 // ---------------------- GENERATE LIST -----------------------
