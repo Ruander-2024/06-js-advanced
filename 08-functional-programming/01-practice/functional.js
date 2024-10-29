@@ -161,10 +161,10 @@ console.log();
 // Készíts egy olyan metódust ami visszaadja az első felhasználót és onnan kezdve minden 3-ik
 // felhasználót, ha azok éppen aktív állapotban vannak
 // Hint: a filternek meg lehet adni plusz paramétert, ami az elem indexét tárolhatja
-// Elvárt eredmény üres lista! (próbáld ki inaktiv-ra állítod a feltételt, ekkor 9 elemű listát várunk)
+// Elvárt eredmény üres lista! (próbáld ki, hogy a feltételt hamisra állítod, ekkor 9 elemű listát várunk)
 
 
-const everyThirdActiveUser = users.filter((user, index) => index % 3 === 0 && user.isActive);
+const everyThirdActiveUser = users.filter((user, index) => index % 3 === 0 && user.isActive === false);  // === false (hamis a feltétel) . ha igaz, az a rész nem kell
 
 console.log(everyThirdActiveUser);
 
