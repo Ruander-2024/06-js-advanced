@@ -25,3 +25,111 @@
 //Menj végig a listán és adj az összes dolgozónak 10% fizetésemelést
 //Majd írd ki az aktuális fizetésüket
 
+
+
+// 1. lépés: Hozz létre egy üres Employee osztályt
+class Employee {
+    // 2. lépés: Konstruktor firstName paraméterrel
+    constructor(firstName, lastName, age, city, job, department, remainingVacationDays, salary) {
+        // 3. lépés: További paraméterek hozzáadása
+        this._firstName = firstName;
+        this._lastName = lastName;
+        this._age = age;
+        this._city = city;
+        this._job = job;
+        this._department = department;
+        this._remainingVacationDays = remainingVacationDays;
+        this._salary = salary;
+    }
+
+    // 6. lépés: Getters hozzáadása a field-ekhez
+    get firstName() {
+        return this._firstName;
+    }
+
+    get lastName() {
+        return this._lastName;
+    }
+
+    get age() {
+        return this._age;
+    }
+
+    get city() {
+        return this._city;
+    }
+
+    get job() {
+        return this._job;
+    }
+
+    get department() {
+        return this._department;
+    }
+
+    get remainingVacationDays() {
+        return this._remainingVacationDays;
+    }
+
+    get salary() {
+        return this._salary;
+    }
+
+    // 7. lépés: Függvény a teljes név visszaadására
+    getFullName() {
+        return `${this._firstName} ${this._lastName}`;
+    }
+
+    // 8. lépés: Függvény a születési év visszaadására
+    getBirthYear() {
+        const currentYear = new Date().getFullYear();
+        return currentYear - this._age;
+    }
+
+    // 10. lépés: takeVacationDays függvény
+    takeVacationDays(daysOff) {
+        if (daysOff <= this._remainingVacationDays) {
+            this._remainingVacationDays -= daysOff;
+        } else {
+            console.log("Nincs elegendő szabadságnap!");
+        }
+    }
+
+    // 11. lépés: Salary increase function
+    giveRaise() {
+        this._salary *= 1.1;
+    }
+}
+
+// 4. lépés: Létrehozunk 3 példányt: Harry, Kriszta és Daniel
+const harry = new Employee("Harry", "Smith", 30, "New York", "Engineer", "IT", 20, 50000);
+const kriszta = new Employee("Kriszta", "Johnson", 25, "Los Angeles", "Manager", "Sales", 25, 60000);
+const daniel = new Employee("Daniel", "Brown", 28, "Chicago", "Designer", "Marketing", 15, 55000);
+
+// 6. lépés: Kiírjuk a teljes neveket
+console.log(harry.getFullName(), kriszta.getFullName(), daniel.getFullName());
+
+// 7. lépés: Kiírjuk a születési évüket
+console.log(harry.getBirthYear(), kriszta.getBirthYear(), daniel.getBirthYear());
+
+// 11. lépés: Fizetésemelés Harrynek, és az előtte-utána állapot kiírása
+console.log("Harry fizetés (emelés előtt):", harry.salary);
+harry.giveRaise();
+console.log("Harry fizetés (emelés után):", harry.salary);
+
+// 10. lépés: 5 nap szabadság Krisztának, és az előtte-utána állapot kiírása
+console.log("Kriszta szabadnapok (szabadság előtt):", kriszta.remainingVacationDays);
+kriszta.takeVacationDays(5);
+console.log("Kriszta szabadnapok (szabadság után):", kriszta.remainingVacationDays);
+
+// 2. FELADAT: Lista létrehozása és az összes dolgozó teljes nevének kiírása
+const employees = [harry, kriszta, daniel];
+for (const employee of employees) {
+    console.log(employee.getFullName());
+}
+
+// 3. FELADAT: Fizetésemelés az összes dolgozónak és az aktuális fizetésük kiírása
+employees.forEach(employee => {
+    employee.giveRaise();
+    console.log(employee.getFullName(), "aktuális fizetés:", employee.salary);
+});
