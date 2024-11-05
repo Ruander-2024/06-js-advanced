@@ -95,7 +95,7 @@ class Employee {
         }
     }
 
-    // 11. lépés: Salary increase function
+    // 11. lépés: Salary increase function ( 10% fizetés emelés )
     giveRaise() {
         this._salary *= 1.1;
     }
