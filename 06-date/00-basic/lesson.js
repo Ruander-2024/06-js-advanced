@@ -25,15 +25,47 @@ console.log(currentDate.toDateString());    // Tue Nov 05 2024
 
 console.log(currentDate.toTimeString());    //  19:12:20 GMT +0100 közép-európai téli idő
 
-console.log(currentDate.toLocaleString('en'));      // angol form.
+console.log(currentDate.toLocaleString('en'));      // angol form. 11/5/2024, 7:17:51 PM
 
-console.log(currentDate.toLocaleString('hu'));      // magyar form.
+console.log(currentDate.toLocaleString('hu'));      // magyar form. 2024. 11. 05. 19:17:51
 
-console.log(currentDate.toLocaleDateString('hu'));      // csak dátum magyar form.
+console.log(currentDate.toLocaleDateString('hu'));      // csak dátum magyar form. 2024. 11. 05.
 
-console.log(currentDate.toDateString('en'));            // dátum eng.
+console.log(currentDate.toDateString('en'));            // dátum eng. Tue Nov 05 2024
 
 
-console.log(currentDate.toLocaleTimeString('hu'));      // csak idő hun.
+console.log(currentDate.toLocaleTimeString('hu'));      // csak idő hun. 19:17:51
 
-console.log(currentDate.toLocaleTimeString('en'));      // csak idő eng.
+console.log(currentDate.toLocaleTimeString('en'));      // csak idő eng. 7:17:51 PM
+
+console.log('------------------------------------');
+
+// Timestamp
+
+console.log(Date.now());            // 1730830868913    // 1970.01.01. 00:00 óta eltelt ezredmásodpercek száma
+
+
+console.log(Date.now() / 1000 / 60 / 60 / 24 / 365);    // 54 év telt el a számítás kezdete óta
+
+console.log(currentDate.toJSON()); 
+
+console.log(currentDate.getFullYear());     // 2024
+
+console.log(currentDate.getMonth());    // 10. indexű hónap
+
+console.log(currentDate.getDate());     // 5 nap
+
+console.log(currentDate.getDay());        // hétnek a napja
+
+console.log(currentDate.getDate());     // hónapnak a napja
+
+console.log(currentDate.getHours());        // 19 óra
+
+console.log(currentDate.getMinutes());      // 43 perc
+
+console.log(currentDate.getSeconds());      // másodperc
+
+console.log(currentDate.getMilliseconds());     // miliszekundum
+
+
+console.log(currentDate.setUTCFullYear(2020));      // 2020 -ig ennyi ezred mp. telt el
