@@ -16,6 +16,79 @@
 //Adj 10%-os fizetésemelést az egyik dolgozónak, írd ki az előtte-utána állapotot
 //Egy másik dolgozó menjen el 5 napra szabadságra, írt ki az előtte-utána állapotot
 
+class Employee{
+    #firstName;
+    #lastName;
+    #age;
+    #city;
+    #job;
+    #department;
+    #remainingVacationDays;
+    #salary;
+    constructor(firstName, lastName, age, city, job, department, remainingVacationDays, salary){
+        this.#firstName = firstName;
+        this.#lastName = lastName;
+        this.#age = age;
+        this.#city = city;
+        this.#job = job;
+        this.#department = department;
+        this.#remainingVacationDays = remainingVacationDays;
+        this.#salary = salary;
+    }
+
+    get firstName(){
+        return this.#firstName;
+    }
+
+    get lastName() {
+      return this.#lastName;
+    }
+
+    get age() {
+      return this.#age;
+    }
+
+    get city() {
+      return this.#city;
+    }
+
+    get job() {
+      return this.#job;
+    }
+
+    get department() {
+      return this.#department;
+    }
+
+    get remainingVacationDays() {
+        return this.#remainingVacationDays;
+      }
+
+    set remainingVacationDays(num) {
+      this.#remainingVacationDays = num;
+    }
+
+    get salary() {
+      return this.#salary;
+    }
+
+    getFullName(){
+        return this.firstName + ' ' + this.lastName;
+    }
+
+    getYearOfBirth(){
+        return new Date().getFullYear() - this.age;
+    }
+}
+
+harry = new Employee("Harry", "Potter", 30, "London", "Auror", "Magic Law Enforcement", 10, 6000);
+kriszta = new Employee("Kriszta", "Nagy", 25, "Budapest", "Frontend Developer", "IT", 5, 5000);
+daniel = new Employee("Daniel", "Smith", 28, "New York", "Product Manager", "Product Development", 2, 4000);
+
+console.log(harry.remainingVacationDays);
+harry.remainingVacationDays = 15;
+console.log(harry.remainingVacationDays);
+
 //2. FELADAT
 //Hozz létre egy listát, amelyben az employee-kat tárolod
 //for ciklussal írd ki a console-ra az összes dolgozó teljes nevét
@@ -24,4 +97,3 @@
 //3.FELADAT
 //Menj végig a listán és adj az összes dolgozónak 10% fizetésemelést
 //Majd írd ki az aktuális fizetésüket
-
