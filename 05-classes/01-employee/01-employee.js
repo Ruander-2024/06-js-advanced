@@ -79,6 +79,22 @@ class Employee{
     getYearOfBirth(){
         return new Date().getFullYear() - this.age;
     }
+
+    // takeVacationDays(daysOff){
+    //     this.remainingVacationDays -= daysOff;
+    // }
+
+    takeVacationDays(daysOff) {
+      if (daysOff <= this.#remainingVacationDays) {
+        this.#remainingVacationDays -= daysOff;
+      } else {
+        console.log("Nincs elegendő szabadságnap!");
+      }
+    }
+
+    increaseSalary() {
+      return this.#salary *= 1.1;
+    }
 }
 
 harry = new Employee("Harry", "Potter", 30, "London", "Auror", "Magic Law Enforcement", 10, 6000);
@@ -89,6 +105,21 @@ console.log(harry.remainingVacationDays);
 harry.remainingVacationDays = 15;
 console.log(harry.remainingVacationDays);
 
+const EmployeeList = [harry, kriszta, daniel];
+
+for (let i = 0; i < EmployeeList.length; i++) {
+  console.log(EmployeeList[i].firstName + " " + EmployeeList[i].lastName + " " + EmployeeList[i].getYearOfBirth());
+}
+
+console.log(daniel.salary);
+console.log(daniel.increaseSalary(daniel.salary));
+
+console.log(harry.remainingVacationDays);
+harry.takeVacationDays(5);
+console.log(harry.remainingVacationDays);
+
+// console.log(daniel.firstName,daniel.lastName,daniel.getYearOfBirth(daniel.age));
+
 //2. FELADAT
 //Hozz létre egy listát, amelyben az employee-kat tárolod
 //for ciklussal írd ki a console-ra az összes dolgozó teljes nevét
@@ -98,3 +129,7 @@ console.log(harry.remainingVacationDays);
 //Menj végig a listán és adj az összes dolgozónak 10% fizetésemelést
 //Majd írd ki az aktuális fizetésüket
 
+EmployeeList.forEach(person => {
+  person.increaseSalary();
+  console.log('Emelt fizu: ', person.salary);
+})
