@@ -22,16 +22,22 @@ function getMin(array) {
     //Keresd meg add vissza a legkisebb értéket
     //Ahhoz, hogy a paraméterben kapott tömböt használni tudd a min függvényben, 
     //tedd elé: ...
+    console.log(Math.min(getMin(...minArray)));
+    
 };
 
 function getRound(number) {
     //Add vissza a paraméterben kapott szám kerekített értékét
+    console.log(Math.round(getRound));
+    
 }
 
 function getMax(array) {
     //Keresd meg és add vissza a legnagyobb értéket.
     //Ahhoz, hogy a paraméterben kapott tömböt használni tudd a min függvényben, 
     //tedd elé: ...
+    console.log(Math.max(getMax(...maxArray)));
+    
 };
 
 function getPow(first, second) {
@@ -40,12 +46,17 @@ function getPow(first, second) {
 
 function getFloor(numberFloor) {
     //Add vissza a paraméterben kapott tört számhoz (alsó) legközelebb eső egész szám értékét (floor())
+    console.log(Math.floor(getFloor));
+    
 };
 
 function getCeil(number) {
     //Add vissza a paraméterben kapott tört számhoz (felső) legközelebb eső egész szám értékét (ceil())
+    
 };
 
 function getPI() {
     //Add vissza a PI értékét
+    console.log(Math.floor(getPI));
+    
 }

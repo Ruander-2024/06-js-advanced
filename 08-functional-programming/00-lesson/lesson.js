@@ -51,5 +51,76 @@ const calculate = function (array, operation){
     return result;
 }
 
+
+// Map 
+
 console.log(calculate(listOfNumbers2, double));
 console.log(calculate(listOfNumbers, triple));
+
+
+
+const people = [
+    { name: 'Joe', age: 30, gender: 'male'},
+    { name: 'Gustav', age: 43, gender: 'male'},
+    { name: 'Jane', age: 18, gender: 'female'},
+    { name: 'Billy', age: 42, gender: 'male'},
+    { name: 'Eva', age: 6, gender: 'female'},
+    { name: 'Victoria', age: 53, gender: 'female'},
+];
+
+const words = ['asap', 'byob', 'rsvp', 'diy'];
+
+const olderPeople = people.map(person => {
+    return{
+        name: person.name,
+        age: person.age + 10,
+        gender: person.gender,
+        isOlderThan50: person.age + 10 > 50
+    };
+});
+
+console.log(people);
+console.log(olderPeople);
+
+const peopleAgesList = olderPeople.map(person => person.age)
+console.log(peopleAgesList);
+
+const wordsCapitalize = words.map(word => {
+    return word.toLocaleUpperCase().split('').join('.');
+});
+
+console.log(wordsCapitalize);
+
+// FOREACH
+
+console.log('--- foreach ---');
+
+// const politePeople = people.forEach(person => (person.name = 'Hi I am ' + person.name));   forEach ciklusnál nem hozunk létre változót
+
+const politePeople = people.forEach(person => (person.name = 'Hi I am ' + person.name));
+
+console.log(politePeople); // undefined
+console.log(people);
+
+
+listOfNumbers.forEach((num, index) => console.log(index, num));
+
+// FILTER
+
+console.log('--- filter ---');
+
+const peopleOver40 = olderPeople.filter(person => person.age > 40);
+console.log(peopleOver40);
+
+const nameOfPeopleOver40 = olderPeople
+    .filter(person => person.age > 40)
+    .map(person => person.name);
+
+console.log(nameOfPeopleOver40);
+
+// SORT
+
+
+
+
+
