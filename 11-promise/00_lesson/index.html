@@ -15,6 +15,58 @@
       integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
       crossorigin="anonymous"
     ></script>
+    <style>
+        /* Alap háttér */
+        body {
+            background-color: black;
+            color: #ff00ff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Neonhatás a címhez */
+        h1 {
+            color: #ff00ff;
+            text-align: center;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            margin-bottom: 20px;
+        }
+
+        /* Táblázat stílus */
+        #personTable {
+            color: #ff00ff;
+            background-color: #222;
+            border: 2px solid #ff00ff;
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        #personTable th, #personTable td {
+            color: #ff00ff;
+            border-color: #ff00ff;
+            text-shadow: 0 0 5px #ff00ff;
+        }
+
+        /* Gomb stílus */
+        .btn-secondary {
+            background-color: #222;
+            color: #ff00ff;
+            border: 2px solid #ff00ff;
+            box-shadow: 0 0 10px #ff00ff;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ff00ff;
+            color: black;
+            text-shadow: none;
+            box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+        }
+
+        .btn-secondary:active {
+            box-shadow: none;
+            transform: scale(0.95);
+        }
+    </style>
 </head>
 <body>
 
@@ -34,8 +86,8 @@
                 <!-- HTML kontent hozzáadása JS-ből -->
             </tbody>
         </table>
-        <button class="btn btn-secondary" onclick="">Adatok lekérése</button>
+        <button class="btn btn-secondary" onclick="getData()">Adatok lekérése</button>
     </div>
-    <script src="async-await.js"></script>
+    <script src="async_await.js"></script>
 </body>
 </html>
