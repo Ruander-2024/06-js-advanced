@@ -1,0 +1,54 @@
+body {
+    background-color: black;
+    color: neon pink;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    background-color: #000000;
+    padding: 20px;
+    width: 300px;
+    margin: 100px auto;
+    border-radius: 10px;
+    color: #ff007f; /* neon pink */
+}
+
+label {
+    color: #ff007f;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ff007f;
+    border-radius: 5px;
+    background-color: #333333;
+    color: #ff007f;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #ff007f;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff33a8; /* brighter neon pink */
+}
+
+
+#result {
+    background-color: black;
+    color: #FF69B4; /* Neon pink */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    display: none; /* Kezdetben rejtett */
+}
